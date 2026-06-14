@@ -1324,3 +1324,190 @@ canvas#telemetry-graph {
 @media (min-width: 768px) {
   .md\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
 }
+
+
+/* ============================================================
+   HERO GRID — responsive text + avatar layout
+   ============================================================ */
+.hero-content-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-text   { flex: 1 1 260px; }
+.hero-avatar { flex: 0 0 auto; }
+
+/* Stack vertically on mobile */
+@media (max-width: 600px) {
+  .hero-content-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-text { flex: 1 1 100%; }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE — 480px and below
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* Base font slightly smaller */
+  body { font-size: 12px; }
+
+  /* Boot loader — tighter padding, smaller font */
+  .boot-container {
+    padding: 18px 16px;
+  }
+  .boot-title { font-size: 11px; letter-spacing: 0.08em; }
+  .boot-log   { font-size: 11px; min-height: 100px; }
+
+  /* Dashboard padding */
+  .dashboard-container { padding: 10px; gap: 10px; }
+
+  /* ── HEADER ── */
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+  }
+  .system-title {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .system-status { font-size: 10px; gap: 6px; }
+  .system-status .text-muted { display: none; } /* hide C2_CORRIDOR on tiny screens */
+
+  /* ── PANEL HEADERS ── */
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 8px 12px;
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+  }
+  .panel-header span:last-child {
+    font-size: 7.5px;
+    opacity: 0.6;
+  }
+
+  /* ── HERO / IDENTITY MANIFEST ── */
+  /* Stack text above photo on mobile */
+  .panel-content.grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  /* Center the profile HUD on mobile */
+  .hud-profile-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  /* ── SKILL TILES ── */
+  .skill-tile { padding: 9px 10px; }
+  .skill-name { font-size: 11px; }
+  .skill-readout { font-size: 12px; }
+
+  /* ── PROJECT CARDS ── */
+  .project-card { padding: 12px 10px; }
+  .project-title { font-size: 10px; }
+  .project-meta  { font-size: 11px; }
+  .tech-tag      { font-size: 9px; padding: 2px 5px; }
+
+  /* ── TIMELINE ── */
+  .timeline-row { margin-left: 14px; padding: 8px 10px; }
+  .milestone-date {
+    display: block;
+    margin-bottom: 2px;
+    margin-right: 0;
+    font-size: 11px;
+  }
+  /* Wrap title below date instead of inline */
+  .timeline-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* ── ENTROPY SANDBOX ── */
+  .entropy-input  { font-size: 12px; padding: 8px 10px; }
+  .stat-val       { font-size: 13px; }
+  .entropy-cracking-speed { font-size: 10px; }
+
+  /* ── TERMINAL ── */
+  .terminal-shell { min-height: 200px; max-height: 300px; }
+  .terminal-logs  { font-size: 11px; padding: 10px 12px; }
+  .terminal-prompt { font-size: 11px; }
+  .terminal-input  { font-size: 11px; }
+
+  /* ── CONTACT FORM ── */
+  .contact-input        { font-size: 11px; padding: 8px 10px; }
+  .contact-submit-btn   { font-size: 9px; letter-spacing: 0.08em; padding: 10px; }
+
+  /* ── FOOTER ACTIONS ── */
+  .bottom-actions { flex-direction: column; }
+  .action-btn {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    padding: 14px 10px;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-dim);
+  }
+  .action-btn:last-child { border-bottom: none; }
+
+  /* ── TELEMETRY FOOTER ── */
+  .telemetry-footer-bar { font-size: 9.5px; padding: 5px 10px; }
+
+  /* ── HUD TAG ── */
+  .hud-tag { display: none; }
+
+  /* ── LIVE TICKER ── */
+  .live-audit-item { font-size: 10px; }
+
+}
+
+/* ============================================================
+   TABLET — 481px to 767px
+   ============================================================ */
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .dashboard-container { padding: 12px; gap: 12px; }
+
+  .top-header {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 16px;
+  }
+  .system-title { font-size: 11px; letter-spacing: 0.14em; }
+
+  .panel-header { font-size: 9px; padding: 8px 14px; }
+
+  .hud-profile-container { width: 130px; height: 130px; }
+
+  .panel-content.grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+  }
+
+  .bottom-actions { flex-direction: column; }
+  .action-btn {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-dim);
+  }
+  .action-btn:last-child { border-bottom: none; }
+
+  .timeline-row { margin-left: 14px; }
+  .milestone-date { font-size: 11px; }
+
+}
