@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const rainDrops = Array(Math.floor(columns)).fill(1);
     
     function drawMatrix() {
-      ctx.fillStyle = 'rgba(10, 10, 12, 0.08)'; // Fade background
+      ctx.fillStyle = 'rgba(6,9,18,0.08)';
       ctx.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
       
-      ctx.fillStyle = '#00f5ff'; // Neon Cyan
+      ctx.fillStyle = 'rgba(108,99,255,0.7)';
       ctx.font = fontSize + 'px monospace';
       
       for (let i = 0; i < rainDrops.length; i++) {
@@ -214,9 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const height = canvas.height;
       const padding = 12;
       
-      const activeColor = '#00f5ff';
-      const borderColor = 'rgba(0, 245, 255, 0.1)';
-      const mutedColor = '#4a6080';
+      const activeColor = '#6c63ff';
+      const borderColor = 'rgba(108,99,255,0.15)';
+      const mutedColor = '#4a5278';
       
       // Draw grid lines
       ctx.strokeStyle = borderColor;
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
       
       // Draw area fill
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.03)'; 
+      ctx.fillStyle = 'rgba(108,99,255,0.05)'; 
       ctx.lineTo(width - padding, height - padding);
       ctx.lineTo(padding, height - padding);
       ctx.closePath();
@@ -305,8 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     bindTelemetryHover('#project-1', '[SYS_LOG]: Fetching access control schema for PRJN26-161...');
-    bindTelemetryHover('#project-2', '[SYS_LOG]: Patched infiltration sweep parameters... OK');
-    bindTelemetryHover('#project-3', '[SYS_LOG]: Initializing entropy validation matrices...');
+    bindTelemetryHover('#project-2', '[SYS_LOG]: Initializing entropy validation matrices...');
     bindTelemetryHover('#skills-panel', '[SEC_TRACE]: Querying cryptographic signature authorities... OK');
     bindTelemetryHover('#entropy-input', '[SYS_LOG]: Reading credential input vector...');
     bindTelemetryHover('#terminal-input', '[C2_SHELL]: Opening interaction socket...');
@@ -340,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
       shannonVal.innerText = '0.00';
       comboVal.innerText = '0';
       strengthBar.style.width = '0%';
-      strengthBar.style.backgroundColor = 'var(--neon-red)';
+      strengthBar.style.backgroundColor = 'var(--red)';
       crackTime.innerText = 'EST. TIME TO BRUTE-FORCE: Instant';
       warnings.style.display = 'none';
       return;
@@ -384,13 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let strengthPercent = Math.min(100, (bits / 100) * 100);
     strengthBar.style.width = `${strengthPercent}%`;
     
-    const activeColor = '#00f5ff';
-    const alertColor = '#ff003c';
+    const activeColor = '#6c63ff';
+    const alertColor = '#ff4d6d';
     
     if (bits < 40) {
       strengthBar.style.backgroundColor = alertColor;
     } else if (bits < 75) {
-      strengthBar.style.backgroundColor = '#ffaa00'; // Warning Amber
+      strengthBar.style.backgroundColor = '#f5a623'; // Warning Amber
     } else {
       strengthBar.style.backgroundColor = activeColor;
     }
@@ -510,10 +509,9 @@ document.addEventListener('DOMContentLoaded', () => {
         appendTerminalLine('  [DevSecOps]  Nginx, Docker Containerization, CI/CD Hardening, PCAP Inspection');
         break;
       case 'projects':
-        appendTerminalLine('EXPLOIT ARCHIVE INVENTORY:');
+        appendTerminalLine('PROJECT ARCHIVE INVENTORY:');
         appendTerminalLine('  [01] Healthcare Identity Framework [PRJN26-161]');
-        appendTerminalLine('  [02] IBM Internship & Tournament Placements');
-        appendTerminalLine('  [03] AegisPass System Calculator');
+        appendTerminalLine('  [02] AegisPass System Calculator');
         break;
       case 'system_scan':
         runSystemScan();
@@ -584,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     appendTerminalLine(' ', '');
     appendTerminalLine('=================== DECRYPTION PROTOCOL ACTIVATED ===================', 'crimson');
-    appendTerminalLine('[*] TARGET FILE: d:\\Certificates\\cyber-portfolio\\cv.pdf');
+    appendTerminalLine('[*] TARGET FILE: Ananth Kamath CV.pdf');
     appendTerminalLine('[*] Handshaking with secure key escrow vault...');
     
     setTimeout(() => {
@@ -615,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendTerminalLine('[*] Establishing download socket connection... stream pushed.', 'muted');
             
             const link = document.createElement('a');
-            link.href = 'cv.pdf';
+            link.href = 'Ananth Kamath CV.pdf';
             link.download = 'Ananth_Kamath_CV.pdf';
             document.body.appendChild(link);
             link.click();
